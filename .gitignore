@@ -1,6 +1,6 @@
 /frontend/node_modules
 /backend/resources
 /backend/llm-multitool
-/data/*.json
+/data/
 /frontend/dist/
 /dist/
