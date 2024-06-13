@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"path"
 	"path/filepath"
 	"time"
@@ -37,7 +38,18 @@ var sessionBroadcaster *broadcaster.Broadcaster = nil
 var templates *template.TemplateDatabase = nil
 
 func setupStorage(storagePath string) *mem_storage.SimpleStorage {
+	if _, err := os.Stat(storagePath); os.IsNotExist(err) {
+		err := os.MkdirAll(storagePath, 0755) // Create data directory
+		if err != nil {
+			fmt.Println("Error creating directory:", err)
+		} else {
+			fmt.Println("Directory created.")
+		}
+	}
 	return mem_storage.New(storagePath)
+}
+
+func checkAndCreateDataDir() {
 }
 
 func setupEngine(configPath string, presetDatabase *presets.PresetDatabase) *engine.Engine {
