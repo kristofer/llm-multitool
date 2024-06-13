@@ -43,13 +43,10 @@ func setupStorage(storagePath string) *mem_storage.SimpleStorage {
 		if err != nil {
 			fmt.Println("Error creating directory:", err)
 		} else {
-			fmt.Println("Directory created.")
+			fmt.Println("Data directory created.")
 		}
 	}
 	return mem_storage.New(storagePath)
-}
-
-func checkAndCreateDataDir() {
 }
 
 func setupEngine(configPath string, presetDatabase *presets.PresetDatabase) *engine.Engine {
