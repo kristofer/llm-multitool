@@ -1,9 +1,6 @@
 - name: Ollama
   address: "http://localhost:11434"
   variant: ollama
-- name: Alpha M3
-  address: "http://100.102.186.90:11434"
-  variant: ollama
 - name: LocalAI
   address: "http://127.0.0.1:5001/v1"
 - name: OpenAI
