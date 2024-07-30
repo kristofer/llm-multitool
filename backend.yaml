@@ -1,7 +1,7 @@
-- name: Ollama
+- name: Ollama-localhost
   address: "http://localhost:11434"
   variant: ollama
-- name: LocalAI
+- name: LocalAI-port5001
   address: "http://127.0.0.1:5001/v1"
 - name: OpenAI
   api_token_from: openai_token.txt
