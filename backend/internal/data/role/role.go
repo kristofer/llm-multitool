@@ -7,4 +7,6 @@ const (
 	Assistant
 )
 
-//go:generate go-enum -type=Role
+//go:generate go-enum
+
+//-type=Role

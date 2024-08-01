@@ -10,4 +10,6 @@ const (
 	Aborted
 )
 
-//go:generate go-enum -type=ResponseStatus
+//go:generate go-enum 
+
+//-type=ResponseStatus
