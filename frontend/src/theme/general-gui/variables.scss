@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../general-gui/pxToRem";
 
 //-------------------------------------------------------------------------
@@ -61,9 +63,9 @@ $de-gamma-table:
 }
 
 @function luma($c) {
-  $rlin: de-gamma(red($c)/255);
-  $glin: de-gamma(green($c)/255);
-  $blin: de-gamma(blue($c)/255);
+  $rlin: de-gamma(math.div(red($c), 255));
+  $glin: de-gamma(math.div(green($c), 255));
+  $blin: de-gamma(math.div(blue($c), 255));
   @return (0.2126 * $rlin + 0.7152 * $glin + 0.0722 * $blin) * 100;
 }
 
@@ -75,7 +77,7 @@ $de-gamma-table:
 }
 
 @function hsv($h, $s, $v) {
-  @return hsl($h, $s, $v/2);
+  @return hsl($h, $s, $v*0.5);
 }
 
 @mixin focus() {
@@ -300,7 +302,7 @@ $badge-line-height:             1 !default;
 $badge-border-radius:           1.5em !default;
 $badge-background-color:        lighten($background-highlight-color, 6%) !default;
 $badge-color:                   $text-highlight-color !default;
-$badge-vertical-align:          1/$badge-font-ratio * $badge-vertical-padding !default;
+$badge-vertical-align:          math.div(1, $badge-font-ratio) * $badge-vertical-padding !default;
 
 //-------------------------------------------------------------------------
 // Scrollbars

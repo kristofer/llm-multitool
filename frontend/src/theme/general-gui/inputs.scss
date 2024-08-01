@@ -1,4 +1,6 @@
 
+@use "sass:math";
+
 input:not([type="radio"]), select, textarea {
   font-size: $input-font-size;
   font-family: $font-family;
@@ -174,7 +176,7 @@ input[type="radio"] {
     width: $radio-size;
     height: $radio-size;
     border-radius: inherit;
-    border: $radio-size/3 solid transparent;
+    border: math.div($radio-size, 3) solid transparent;
     background-clip: content-box;
     background-color: $background-color;
     transform: scale(0);
