@@ -4,7 +4,7 @@
   default: true
 
 - id: "4c080472-0aee-42cc-a100-e0fbb845f5a0"
-  name: "Summerize text"
+  name: "Summarize text"
   template_string: |-
     Summarize the following passage in a concise manner. Only give the summary.:
 
